@@ -1,7 +1,7 @@
 from nmigen import *
 from nmigen_boards.m2s010_mkr_kit import *
 
-from mss_port_list import *
+from nmigen_smartfusion2.mss_port_list import *
 from nmigen_smartfusion2.macro_m2s010 import *
 
 class SmartFusion2MSS(Elaboratable):
