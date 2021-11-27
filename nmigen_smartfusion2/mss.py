@@ -2,7 +2,7 @@ from nmigen import *
 from nmigen_boards.m2s010_mkr_kit import *
 
 from mss_port_list import *
-from . import macro_m2s010
+from nmigen_smartfusion2.macro_m2s010 import *
 
 class SmartFusion2MSS(Elaboratable):
     def __init__(self):
@@ -36,7 +36,7 @@ class SmartFusion2MSS(Elaboratable):
         return ports
 
     def elaborate(self, platform):
-        platform.add_file("M2S010_MSS_syn.v", macro_m2s010.get_m2s010_macro())
+        platform.add_file("M2S010_MSS_syn.v", get_m2s010_macro())
         m = Module()
         m.submodules.MSS_ADLIB_INST = Instance("MSS_010",
             p_ACT_UBITS=0xFFFFFFFFFFFFFF,
